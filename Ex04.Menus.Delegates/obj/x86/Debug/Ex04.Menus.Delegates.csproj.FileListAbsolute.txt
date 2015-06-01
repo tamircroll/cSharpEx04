@@ -1,0 +1,4 @@
+C:\VisualStudio Workspace\B15 Ex04 Tamir 039409594 Asaf 200436871\Ex04.Menus.Delegates\bin\Debug\Ex04.Menus.Delegates.dll
+C:\VisualStudio Workspace\B15 Ex04 Tamir 039409594 Asaf 200436871\Ex04.Menus.Delegates\bin\Debug\Ex04.Menus.Delegates.pdb
+C:\VisualStudio Workspace\B15 Ex04 Tamir 039409594 Asaf 200436871\Ex04.Menus.Delegates\obj\x86\Debug\Ex04.Menus.Delegates.dll
+C:\VisualStudio Workspace\B15 Ex04 Tamir 039409594 Asaf 200436871\Ex04.Menus.Delegates\obj\x86\Debug\Ex04.Menus.Delegates.pdb
