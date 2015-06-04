@@ -9,6 +9,6 @@ namespace Ex04.Menus.Interfaces
             get;
         }
 
-        void Action();
+        void Show();
     }
 }

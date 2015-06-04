@@ -6,9 +6,9 @@ namespace Ex04.Menus.Interfaces
 {
     public class Menu : IMenuItem
     {
+        private const string k_GoBack = "Back";
         private string m_Title;
         private List<IMenuItem> m_Options = new List<IMenuItem>();
-        protected string m_PrevItem;
 
         public Menu(string i_Title) : this(i_Title, null)
         {
@@ -17,7 +17,6 @@ namespace Ex04.Menus.Interfaces
         public Menu(string i_Title, params IMenuItem[] i_Items)
         {
             m_Title = i_Title;
-            m_PrevItem = "Back";
 
             if (i_Items != null)
             {
@@ -25,12 +24,17 @@ namespace Ex04.Menus.Interfaces
             }
         }
 
+        public virtual string GoBack
+        {
+            get { return k_GoBack; }
+        }
+
         public string Title
         {
             get { return m_Title; }
         }
 
-        public void Action()
+        public void Show()
         {
             int choiseInt;
             string choiceStr, msg = "Please choose the wanted action index and press Enter:";
@@ -55,7 +59,7 @@ namespace Ex04.Menus.Interfaces
                         }
 
                         choiseInt--;
-                        m_Options[choiseInt].Action();
+                        m_Options[choiseInt].Show();
                         msg = "Please choose the wanted action index and press Enter:";
                     }
                 }
@@ -80,17 +84,17 @@ namespace Ex04.Menus.Interfaces
             StringBuilder toPrint = new StringBuilder();
 
             Console.Clear();
-            toPrint.Append(string.Format("{0}{1}{1}", Title, Environment.NewLine));
-            toPrint.Append(string.Format("{0}. {1}{2}", 0, m_PrevItem, Environment.NewLine));
+            toPrint.AppendFormat("{0}{1}{1}", Title, Environment.NewLine);
+            toPrint.AppendFormat("{0}. {1}{2}", 0, GoBack, Environment.NewLine);
             foreach (IMenuItem item in m_Options)
             {
-                toPrint.Append(string.Format("{0}. {1}{2}", index, item.Title, Environment.NewLine));
+                toPrint.AppendFormat("{0}. {1}{2}", index, item.Title, Environment.NewLine);
                 index++;
             }
 
             if(i_Msg != null)
             {
-                toPrint.Append(string.Format("{0}{1}", i_Msg, Environment.NewLine));
+                toPrint.AppendFormat("{0}{1}", i_Msg, Environment.NewLine);
             }
 
             Console.WriteLine(toPrint);

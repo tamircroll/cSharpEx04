@@ -6,11 +6,15 @@
 
         public MainMenu(params IMenuItem[] i_Items) : base("Main Menu", i_Items)
         {
-            m_PrevItem = "Exit";
         }
 
         public MainMenu() : this(null)
         {
+        }
+
+        public override string GoBack
+        {
+            get { return k_PrevItem; }
         }
     }
 }

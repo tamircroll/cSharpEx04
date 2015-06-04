@@ -1,10 +1,4 @@
-﻿// -----------------------------------------------------------------------
-// <copyright file="Menu.cs" company="">
-// TODO: Update copyright text.
-// </copyright>
-// -----------------------------------------------------------------------
-
-namespace Ex04.Menus.Delegates
+﻿namespace Ex04.Menus.Delegates
 {
     using System;
     using System.Collections.Generic;
@@ -12,19 +6,17 @@ namespace Ex04.Menus.Delegates
 
     public class Menu
     {
+        private const string k_GoBack = "Back";
         private string m_Title;
         private List<MenuItem> m_Options = new List<MenuItem>();
-        protected string m_PrevItem;
-
-        public Menu(string i_Title)
-            : this(i_Title, null)
+        
+        public Menu(string i_Title) : this(i_Title, null)
         {
         }
 
         public Menu(string i_Title, params MenuItem[] i_Items)
         {
             m_Title = i_Title;
-            m_PrevItem = "Back";
 
             if (i_Items != null)
             {
@@ -37,7 +29,12 @@ namespace Ex04.Menus.Delegates
             get { return m_Title; }
         }
 
-        public void Action()
+        public virtual string GoBack
+        {
+            get { return k_GoBack; }
+        }
+
+        public void Action()  //TODO: Check if name is by the coading standards
         {
             int choiseInt;
             string choiceStr, msg = "Please choose the wanted action index and press Enter:";
@@ -87,17 +84,17 @@ namespace Ex04.Menus.Delegates
             StringBuilder toPrint = new StringBuilder();
 
             Console.Clear();
-            toPrint.Append(string.Format("{0}{1}{1}", Title, Environment.NewLine));
-            toPrint.Append(string.Format("{0}. {1}{2}", 0, m_PrevItem, Environment.NewLine));
+            toPrint.AppendFormat("{0}{1}{1}", Title, Environment.NewLine);
+            toPrint.AppendFormat("{0}. {1}{2}", 0, GoBack, Environment.NewLine);
             foreach (MenuItem item in m_Options)
             {
-                toPrint.Append(string.Format("{0}. {1}{2}", index, item.Title, Environment.NewLine));
+                toPrint.AppendFormat("{0}. {1}{2}", index, item.Title, Environment.NewLine);
                 index++;
             }
 
             if (i_Msg != null)
             {
-                toPrint.Append(string.Format("{0}{1}", i_Msg, Environment.NewLine));
+                toPrint.AppendFormat("{0}{1}", i_Msg, Environment.NewLine);
             }
 
             Console.WriteLine(toPrint);
