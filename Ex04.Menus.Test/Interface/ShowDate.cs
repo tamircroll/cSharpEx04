@@ -8,7 +8,8 @@ namespace Ex04.Menus.Test.Interface
     {
         private const string k_Title = "Show Date";
 
-        public string Title {
+        public string Title 
+        {
             get { return k_Title; }
         }
 

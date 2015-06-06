@@ -2,19 +2,19 @@
 
 namespace Ex04.Menus.Test.Delegate
 {
-    public class ShowVersionAndCountWords
+    public class ShowInfo
     {
         private const string k_ShowVersionTitle = "Show version";
         private const string k_CountWordsTitle = "Count Words";
 
-        public void ShowVersion() //TODO: Check if name should be modify
+        public void ShowVersion_ItemChosen()
         {
             Console.Clear();
             Console.WriteLine("{0}{1}{1}Version: 15.2.4.0", k_ShowVersionTitle, Environment.NewLine);
             Console.ReadLine();
         }
 
-        public void CountWords() //TODO: Check if name should be modify
+        public void CountWords_ItemChosen()
         {
             string msg = "Please enter a sentence";
 

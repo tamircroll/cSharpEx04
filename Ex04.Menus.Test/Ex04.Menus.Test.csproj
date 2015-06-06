@@ -34,13 +34,13 @@
   </PropertyGroup>
   <ItemGroup>
     <Compile Include="Delegate\ShowDateAndTime.cs" />
-    <Compile Include="Delegate\ShowVersionAndCountWords.cs" />
-    <Compile Include="Delegate\TimeAndInfoDelegate.cs" />
+    <Compile Include="Delegate\ShowInfo.cs" />
+    <Compile Include="Delegate\DelegateTest.cs" />
     <Compile Include="Interface\CountWords.cs" />
     <Compile Include="Interface\ShowDate.cs" />
     <Compile Include="Interface\ShowTime.cs" />
     <Compile Include="Interface\ShowVersion.cs" />
-    <Compile Include="Interface\TimeAndInfoIterface.cs" />
+    <Compile Include="Interface\IterfaceTest.cs" />
     <Compile Include="Program.cs" />
   </ItemGroup>
   <ItemGroup>

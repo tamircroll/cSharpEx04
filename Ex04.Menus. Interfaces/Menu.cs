@@ -6,7 +6,7 @@ namespace Ex04.Menus.Interfaces
 {
     public class Menu : IMenuItem
     {
-        private const string k_GoBack = "Back";
+        private const string k_GoBackStr = "Back";
         private string m_Title;
         private List<IMenuItem> m_Options = new List<IMenuItem>();
 
@@ -24,9 +24,9 @@ namespace Ex04.Menus.Interfaces
             }
         }
 
-        public virtual string GoBack
+        public virtual string GoBackStr
         {
-            get { return k_GoBack; }
+            get { return k_GoBackStr; }
         }
 
         public string Title
@@ -85,7 +85,7 @@ namespace Ex04.Menus.Interfaces
 
             Console.Clear();
             toPrint.AppendFormat("{0}{1}{1}", Title, Environment.NewLine);
-            toPrint.AppendFormat("{0}. {1}{2}", 0, GoBack, Environment.NewLine);
+            toPrint.AppendFormat("{0}. {1}{2}", 0, GoBackStr, Environment.NewLine);
             foreach (IMenuItem item in m_Options)
             {
                 toPrint.AppendFormat("{0}. {1}{2}", index, item.Title, Environment.NewLine);

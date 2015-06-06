@@ -4,8 +4,8 @@
     {
         public static void Main()
         {
-            new TimeAndInfoIterface().run();
-            new TimeAndInfoDelegate().run();
+            new IterfaceTest().run();
+            new DelegateTest().run();
         }
     }
 }

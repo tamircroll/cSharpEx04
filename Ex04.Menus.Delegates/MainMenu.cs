@@ -12,7 +12,7 @@
         {
         }
 
-        public override string GoBack
+        public override string GoBackStr
         {
             get { return k_PrevItem; }
         }

@@ -3,7 +3,7 @@ using Ex04.Menus.Test.Interface;
 
 namespace Ex04.Menus.Test
 {
-    public class TimeAndInfoIterface
+    public class IterfaceTest
     {
         public void run()
         {

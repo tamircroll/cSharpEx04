@@ -6,7 +6,7 @@
 
     public class Menu
     {
-        private const string k_GoBack = "Back";
+        private const string k_GoBackStr = "Back";
         private string m_Title;
         private List<MenuItem> m_Options = new List<MenuItem>();
         
@@ -29,12 +29,12 @@
             get { return m_Title; }
         }
 
-        public virtual string GoBack
+        public virtual string GoBackStr
         {
-            get { return k_GoBack; }
+            get { return k_GoBackStr; }
         }
 
-        public void Action()  //TODO: Check if name is by the coading standards
+        public void Show()
         {
             int choiseInt;
             string choiceStr, msg = "Please choose the wanted action index and press Enter:";
@@ -59,7 +59,7 @@
                         }
 
                         choiseInt--;
-                        m_Options[choiseInt].InvokeChoise();
+                        m_Options[choiseInt].OnItnemChosen();
                         msg = "Please choose the wanted action index and press Enter:";
                     }
                 }
@@ -74,7 +74,10 @@
         {
             foreach (MenuItem item in i_Items)
             {
-                m_Options.Add(item);
+                if (item != null)
+                {
+                    m_Options.Add(item);
+                }
             }
         }
 
@@ -85,7 +88,7 @@
 
             Console.Clear();
             toPrint.AppendFormat("{0}{1}{1}", Title, Environment.NewLine);
-            toPrint.AppendFormat("{0}. {1}{2}", 0, GoBack, Environment.NewLine);
+            toPrint.AppendFormat("{0}. {1}{2}", 0, GoBackStr, Environment.NewLine);
             foreach (MenuItem item in m_Options)
             {
                 toPrint.AppendFormat("{0}. {1}{2}", index, item.Title, Environment.NewLine);

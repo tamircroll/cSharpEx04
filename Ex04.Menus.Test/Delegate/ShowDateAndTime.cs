@@ -8,7 +8,7 @@ namespace Ex04.Menus.Test.Delegate
         private const string k_ShowTimeTitle = "Show Time";
         private const string k_ShowDateTitle = "Show Date";
 
-        public void showTime() //TODO: Check if name should be modify
+        public void ShowTime_ItemChosen()
         {
             StringBuilder outPut = new StringBuilder();
 
@@ -21,7 +21,7 @@ namespace Ex04.Menus.Test.Delegate
             Console.ReadLine();
         }
 
-        public void showDate() //TODO: Check if name should be modify
+        public void ShowDate_ItemChosen()
         {
             StringBuilder outPut = new StringBuilder();
 
